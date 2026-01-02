@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="image" href="Leoria.jpeg">
+ 
+  <title>Data Science & Machine Learning Bootcamp | Free Course by Leoria</title>
+   <!-- SEO META TAGS -->
+  <meta name="description" content="Free Data Science & Machine Learning Bootcamp by Leoria. Learn Python, ML, Deep Learning with real-world projects and get certified.">
+  <meta name="keywords" content="Data Science course free, Machine Learning bootcamp, Python for Data Science, AI course for beginners, Data Science internship preparation">
+  <meta name="author" content="Leoria">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Data Science & Machine Learning Bootcamp – Free Course">
+  <meta property="og:description" content="Beginner-friendly Data Science & Machine Learning course with projects, certificate & lifetime access.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #6a5acd;
+      --secondary: #00c6ff;
+      --dark: #0b0f1a;
+      --light: #ffffff;
+      --glass: rgba(255,255,255,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #1b1f3b, #050814);
+      color: var(--light);
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(12px);
+      background: rgba(0,0,0,0.4);
+      z-index: 1000;
+    }
+
+    nav h2 {
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    nav a {
+      color: #ddd;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
+    }
+
+    /* HERO */
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+    }
+
+    .hero {
+      max-width: 650px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero span {
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+      color: #000;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 0 25px rgba(0,198,255,0.4);
+      transition: transform 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 100px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #aaa;
+    }
+
+    /* GLASS CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--glass);
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(106,90,205,0.3);
+    }
+
+    .card i {
+      font-size: 32px;
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+
+    /* INSTRUCTOR */
+    .instructor {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .instructor img {
+      width: 100%;
+      border-radius: 25px;
+      border: 2px solid rgba(255,255,255,0.1);
+    }
+
+    /* TESTIMONIALS */
+    .testimonial {
+      font-style: italic;
+      color: #ddd;
+    }
+
+    /* FAQ */
+    details {
+      background: var(--glass);
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+
+    details summary {
+      font-weight: 500;
+    }
+
+    /* CONTACT */
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-family: inherit;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .instructor { grid-template-columns: 1fr; }
+      nav { flex-direction: column; }
+    }
+    /* SCROLL ANIMATION */
+    .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s ease}
+    .reveal.active{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+<body>
+
+  <!-- SEO STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Data Science & Machine Learning Bootcamp",
+    "description": "Free Data Science & Machine Learning course with Python, ML, Deep Learning & projects",
+    "provider": {
+      "@type": "Person",
+      "name": "Priya Sharma"
+    }
+  }
+  </script>
+
+  <!-- NAV -->
+  <nav>
+    <img src="Leoria.jpeg" alt="Leoria Logo" style="height: 70px;border-radius:50%;margin-right:10px"> 
+    <h2 align="left">DSML Bootcamp</h2>
+    <div>
+      <a href="#about">About</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#instructor">Instructor</a>
+      <a href="#contact">Enroll</a>
+    </div><br>
+  </nav>
+
+  <!-- HERO -->
+  <header>
+    <div class="hero">
+      <h1><br>Learn <span>Data Science & Machine Learning</span><br>from Scratch – Free Course</h1>
+      <p>Hands-on projects, real-world skills, free certification & lifetime access. Perfect for beginners and students.</p>
+      <a href="#contact" class="btn">Enroll for Free</a>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="reveal">
+    <div class="section-title">
+      <h2>About the Course</h2>
+      <p>Designed to make you job-ready from day one</p>
+    </div>
+    <div class="grid">
+      <div class="card"><i class="fa-brands fa-python"></i><h3>Python for Data Science</h3><p>Learn Python, NumPy, Pandas & visualization from scratch.</p></div>
+      <div class="card"><i class="fa-solid fa-chart-simple"></i><h3>Statistics</h3><p>Build strong foundations in probability & data analysis.</p></div>
+      <div class="card"><i class="fa-solid fa-robot"></i><h3>Machine Learning</h3><p>Regression, classification & real-world ML models.</p></div>
+      <div class="card"><i class="fa-solid fa-brain"></i><h3>Deep Learning</h3><p>Neural networks & AI fundamentals made simple.</p></div>
+    </div>
+  </section>
+
+  <!-- CURRICULUM -->
+  <section id="curriculum" class="reveal">
+    <div class="section-title">
+      <h2>Course Curriculum</h2>
+      <p>Step-by-step structured learning</p>
+    </div>
+    <div class="grid">
+      <div class="card">🐍 Python for Data Science</div>
+      <div class="card">📊 Statistics & Probability</div>
+      <div class="card">🤖 Machine Learning Algorithms</div>
+      <div class="card">🧠 Deep Learning Basics</div>
+      <div class="card">🛠️ Real-world Projects</div>
+    </div>
+  </section>
+
+  <!-- INSTRUCTOR -->
+  <section id="instructor" class="reveal">
+    <div class="section-title">
+      <h2>Why Learn With Me</h2>
+      <p>Guidance from a passionate educator</p>
+    </div>
+    <div class="instructor">
+      <div>
+        <h3>Priya Sharma</h3>
+        <p>Data Science Intern | AI & ChatGPT Trainer | BE10X Webinar </p>
+        <p>With hands-on industry experience and a passion for teaching, I simplify complex concepts and focus on real-world applications.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998" alt="Instructor">
+    </div>
+  </section>
+
+  <!-- COURSE ROADMAP -->
+  <section class="reveal">
+    <div class="section-title">
+      <h2>Course Roadmap</h2>
+      <p>A clear, step-by-step learning journey</p>
+    </div>
+    <div class="grid">
+      <div class="card"><h3>Week 1</h3><p>Introduction to Data Science, Python basics, setup & mindset</p></div>
+      <div class="card"><h3>Week 2</h3><p>Python for Data Analysis – NumPy, Pandas, data cleaning</p></div>
+      <div class="card"><h3>Week 3</h3><p>Data Visualization, Statistics & Probability fundamentals</p></div>
+      <div class="card"><h3>Week 4</h3><p>Machine Learning – regression, classification, model evaluation</p></div>
+      <div class="card"><h3>Week 5</h3><p>Unsupervised learning, mini ML projects, real datasets</p></div>
+      <div class="card"><h3>Week 6</h3><p>Deep Learning basics, neural networks, final capstone project</p></div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATE -->
+  <section class="reveal" id="certificate-download">
+    <div class="section-title">
+      <h2>Download Your Certificate</h2>
+      <p>A professional certificate you can proudly share</p>
+    </div>
+    <div class="instructor">
+      <div>
+        <h3>Professional Certificate of Completion</h3>
+        <p>This certificate is awarded after successful completion of the <strong>Data Science & Machine Learning Bootcamp</strong>.</p>
+        <ul style="margin-top:15px;color:#ccc;line-height:1.8">
+          <li>✔ Digitally signed by Priya Sharma</li>
+          <li>✔ Includes course name & completion date</li>
+          <li>✔ Shareable on LinkedIn & resume</li>
+          <li>✔ Downloadable PDF format</li>
+        </ul>
+        <a href="#" class="btn" style="margin-top:20px">Download Sample Certificate</a>
+        <p style="font-size:12px;color:#aaa;margin-top:10px">Final certificate available after course completion</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4" alt="Certificate Sample">
+    </div>
+  </section>
+
+  <!-- CERTIFICATE -->
+  <section class="reveal">
+    <div class="section-title">
+      <h2>Certificate of Completion</h2>
+      <p>Boost your resume with a verified certificate</p>
+    </div>
+    <div class="instructor">
+      <div>
+        <h3>Industry-Ready Certification</h3>
+        <p>After successfully completing the course and projects, you will receive a <strong>Certificate of Completion</strong> issued by <strong>Priya Sharma</strong>.</p>
+        <ul style="margin-top:15px;color:#ccc;line-height:1.8">
+          <li>✔ Verifiable & shareable certificate</li>
+          <li>✔ Useful for internships & entry-level roles</li>
+          <li>✔ LinkedIn & resume friendly</li>
+          <li>✔ No extra cost</li>
+        </ul>
+      </div>
+      <img src="https://images.unsplash.com/photo-1600195077077-7c815f540a3d" alt="Certificate Preview">
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="reveal">
+    <div class="section-title"><h2>Student Testimonials</h2></div>
+    <div class="grid">
+      <div class="card testimonial">"Perfect for beginners. Very practical."</div>
+      <div class="card testimonial">"Best free data science course I found."</div>
+      <div class="card testimonial">"Projects helped me build confidence."</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="reveal">
+    <div class="section-title"><h2>FAQs</h2></div>
+    <details><summary>Is this course free?</summary><p>Yes, 100% free with lifetime access.</p></details>
+    <details><summary>Do I need prior experience?</summary><p>No, absolute beginners are welcome.</p></details>
+    <details><summary>How will I access the course?</summary><p>Access details will be shared after enrollment.</p></details>
+  </section>
+
+  <!-- PRICING / PAYMENT -->
+  <section class="reveal" id="pricing">
+    <div class="section-title">
+      <h2>Course Pricing</h2>
+      <p>Start free. Upgrade when you're ready.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Free Batch</h3>
+        <p style="font-size:32px;font-weight:600">₹0</p>
+        <ul style="margin:20px 0;line-height:1.8;color:#ccc">
+          <li>✔ Full course access</li>
+          <li>✔ All projects</li>
+          <li>✔ Community support</li>
+          <li>✖ Certificate</li>
+        </ul>
+        <a href="#contact" class="btn">Enroll Free</a>
+      </div>
+      <div class="card" style="border:2px solid var(--secondary)">
+        <h3>Pro Certificate Batch</h3>
+        <p style="font-size:32px;font-weight:600">₹999</p>
+        <ul style="margin:20px 0;line-height:1.8;color:#ccc">
+          <li>✔ Full course access</li>
+          <li>✔ All projects</li>
+          <li>✔ Priority support</li>
+          <li>✔ Verified certificate</li>
+        </ul>
+        <a href="#" class="btn">Pay via Razorpay</a>
+        <p style="font-size:12px;color:#aaa;margin-top:10px">Payment integration coming soon</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+    <div class="section-title"><h2>Enroll Now</h2></div>
+    <form action="https://form.typeform.com/to/QPw9Kipw" target="_blank">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button class="btn" type="submit">Enroll via Typeform</button>
+    </form>
+    <p style="text-align:center;margin-top:15px;color:#aaa;font-size:14px">You will receive confirmation & course access details on email</p>
+  </section>
+
+  <footer>© 2025 Priya Sharma | Data Science & Machine Learning Bootcamp</footer>
+
+  <script>
+    const reveals=document.querySelectorAll('.reveal');
+    window.addEventListener('scroll',()=>{
+      reveals.forEach(r=>{
+        const top=r.getBoundingClientRect().top;
+        if(top<window.innerHeight-100){r.classList.add('active');}
+      });
+    });
+  </script>
+</body>
+</html>
+
